@@ -87,7 +87,6 @@ Data mentah hasil scraping belum seragam dan tidak langsung siap dianalisis. Tah
 - *Deduplikasi & filtering*: Menghapus baris tanpa price atau seller, dan menghapus duplikat berdasarkan kombinasi product_link + seller.  
 - *Konsolidasi*: Menyimpan hasil preprocessing per anggota di data/processed/individual/ dan menggabungkannya menjadi master_clean.csv.
 
-```
 ## 🚀 Bagaimana Tambahan Data Baru Meningkatkan Keampuhan Model Analisis
 
 Penambahan data baru meningkatkan keandalan model dengan memperkaya distribusi data, memungkinkan perbandingan lintas platform, mendukung analisis tren dari waktu ke waktu, serta meningkatkan akurasi deteksi anomali dan hidden gem.
