@@ -15,9 +15,6 @@
 
 ---
 
-# 📱💻 Analisis Pasar Produk Teknologi di Tokopedia
----
-
 ## 👥 Tim Pengembang: Kelompok SIPP
 
 Kami adalah kolaborasi mahasiswa yang berdedikasi mentransformasi data mentah e-commerce menjadi wawasan strategis di pasar digital.
