@@ -65,7 +65,7 @@ Detail Data:
   
 ---
 
-## 🔎 5V yang Difokuskan + 3V
+## 🔎 5V yang Difokuskan
 
 - *Volume*: Ribuan baris data per kategori/brand, dengan potensi puluhan ribu baris ketika semua kategori dan snapshot digabung.  
 - *Variety*: Data numerik (harga, sold), kategorikal (brand, kategori, condition, seller), dan teks (nama produk, deskripsi singkat).  
