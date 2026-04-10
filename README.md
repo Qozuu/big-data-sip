@@ -48,7 +48,7 @@ Proyek ini memanfaatkan data Tokopedia untuk:
 
 Detail Data:
 
-- Data berjumlah ...
+- Data berjumlah 10690
 - Kolom utama: product_name, price, sold, rating, review_count, seller, serta konteks (category, brand, condition)
 
 **Brand Coverage**
