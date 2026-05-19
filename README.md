@@ -48,7 +48,7 @@ Proyek ini memanfaatkan data Tokopedia untuk:
 
 Detail Data:
 
-- Data berjumlah ...
+- Data berjumlah 10690
 - Kolom utama: product_name, price, sold, rating, review_count, seller, serta konteks (category, brand, condition)
 
 **Brand Coverage**
@@ -89,7 +89,7 @@ Data mentah hasil scraping belum seragam dan tidak langsung siap dianalisis. Tah
 
 ## 🚀 Bagaimana Tambahan Data Baru Meningkatkan Keampuhan Model Analisis
 
-Penambahan data baru meningkatkan keandalan model dengan memperkaya distribusi data, memungkinkan perbandingan lintas platform, mendukung analisis tren dari waktu ke waktu, serta meningkatkan akurasi deteksi anomali dan hidden gem.
+Penambahan data baru meningkatkan keandalan model dengan memperkaya distribusi data, memungkinkan perbandingan lintas platform, mengidentifikasi dominasi brand dengan lebih akurat, serta meningkatkan akurasi deteksi anomali dan hidden gem.
 
 ---
 
