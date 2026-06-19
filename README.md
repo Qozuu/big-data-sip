@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="https://cdn.brandfetch.io/idoruRsDhk/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667561320464" alt="Tokopedia Logo" width="280">
+  <img src="https://cdn.brandfetch.io/idoruRsDhk/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667561320464" alt="Tokopedia Logo" width="220" style="padding: 0 20px;">
+  <img src="https://cdn.brandfetch.io/idgVhUUiaD/w/820/h/262/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1781707152710" alt="Shopee Logo" width="200" style="padding: 0 20px;">
+  <img src="https://cdn.brandfetch.io/idE6z9vRnM/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1775496902207" alt="Blibli Logo" width="220" style="padding: 0 20px;">
 </p>
 
 <h1 align="center">
@@ -46,7 +48,7 @@ Menganalisis resale value dan likuiditas pasar bekas per brand
 | Sumber | Jenis Produk | Kondisi | Metode |
 |--------|-------------|---------|--------|
 | Tokopedia | Smartphone (HP) dan laptop| Baru & Bekas | Web Scraping |
-| Shopee | Smartphone (HP) dan laptop| Baru & Bekas | Web Scraping |
+| Shopee | Smartphone (HP) dan laptop| Baru & Bekas | Simplescraper |
 | BliBli | Smartphone (HP) dan laptop| Baru | Web Scraping |
 
 Detail Data:
@@ -70,14 +72,17 @@ Detail Data:
   
 ---
 
-## 🔎 5V yang Difokuskan
+## 🔎 8V yang Difokuskan
 
-- *Volume*: 97.166 baris data hasil scraping dari 3 platform, menjadi 34.646 setelah cleaning. Distribusi data antar platform relatif seimbang (~33% per platform) sehingga hasil analisis lebih representatif. 
-- *Variety*: Data numerik (harga, jumlah terjual, rating), kategorikal (brand, kategori, kondisi, platform), dan teks (nama produk, lokasi penjual). 
-- *Velocity*: Secara konseptual, sumber datanya memiliki velocity tinggi karena harga, stok, dan jumlah terjual berubah cepat akibat promo dan dinamika permintaan. Velocity juga tercermin dari seberapa laku suatu produk, diukur melalui jumlah_terjual dan estimasi revenue (harga × jumlah_terjual). Penambahan snapshot di waktu berbeda memungkinkan analisis perubahan harga dan penjualan dari waktu ke waktu.
-- *Veracity*: Data mengandung sejumlah noise dan inkonsistensi seperti typo nama brand dan platform, format harga tidak seragam, nilai rating di luar rentang valid, serta produk yang salah kategori. Proses cleaning dilakukan untuk meningkatkan kepercayaan data sebelum dianalisis.
-- *Value*: Dataset memberikan nilai penting dalam analisis, antara lain mengidentifikasi platform e-commerce mana yang paling dominan, membandingkan performa kategori HP dan Laptop, serta menganalisis resale value produk bekas untuk membantu konsumen menentukan merek yang paling worth it untuk dibeli dan dijual kembali.
-  
+- **Volume**: 97.166 baris data hasil scraping dari 3 platform, menjadi 34.646 setelah cleaning. Distribusi data antar platform relatif seimbang (~33% per platform) sehingga hasil analisis lebih representatif.
+- **Variety**: Data numerik (harga, jumlah terjual, rating), kategorikal (brand, kategori, kondisi, platform), dan teks (nama produk, lokasi penjual).
+- **Velocity**: Secara konseptual, sumber datanya memiliki velocity tinggi karena harga, stok, dan jumlah terjual berubah cepat akibat promo dan dinamika permintaan. Velocity juga tercermin dari seberapa laku suatu produk, diukur melalui `jumlah_terjual` dan estimasi revenue (`harga × jumlah_terjual`). Penambahan snapshot di waktu berbeda memungkinkan analisis perubahan harga dan penjualan dari waktu ke waktu.
+- **Veracity**: Data mengandung sejumlah noise dan inkonsistensi seperti typo nama brand dan platform, format harga tidak seragam, nilai rating di luar rentang valid, serta produk yang salah kategori. Proses cleaning dilakukan untuk meningkatkan kepercayaan data sebelum dianalisis.
+- **Value**: Dataset memberikan nilai penting dalam analisis, antara lain mengidentifikasi platform e-commerce mana yang paling dominan, membandingkan performa kategori HP dan Laptop, serta menganalisis resale value produk bekas untuk membantu konsumen menentukan merek yang paling worth it untuk dibeli dan dijual kembali.
+- **Variability**: Dataset menunjukkan dinamika brand dan harga yang bervariasi antar platform. Samsung dominan di Shopee (325K unit), Poco & Xiaomi kuat di Tokopedia, Apple merata di semua platform. Blibli konsisten memiliki median harga tertinggi (~Rp 4,9 juta), Shopee paling terjangkau (~Rp 3,4 juta). Brand populer seperti Samsung dan Apple memiliki variasi harga lebih besar karena menjangkau segmen entry hingga flagship sekaligus.
+- **Validity**: Akurasi analisis dijaga melalui validasi manual sampel produk, verifikasi brand via fuzzy matching (`rapidfuzz`, threshold skor <70), dan filter harga tidak wajar (<Rp 100.000). Deteksi anomali harga menggunakan metode IQR per brand — bukan pengamatan visual — sehingga threshold batas wajar bersifat objektif dan proporsional terhadap distribusi harga masing-masing brand. Divalidasi silang dengan Z-score (|z| > 3). Total anomali terdeteksi: 2.379 listing (6,9%).
+- **Visualization**: Hasil analisis divisualisasikan dalam dashboard ringkas mencakup KPI cards (total produk, top brand, jumlah anomali), treemap dominasi brand, histogram distribusi harga, boxplot median harga per brand, heatmap harga per brand × platform, dan bar chart anomali per brand.
+
 ---
 ## 🛠️ 3. Data Wrangling (Preprocessing)
 
