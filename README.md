@@ -79,12 +79,12 @@ Berikut adalah struktur pengorganisasian file dan dokumen di dalam repositori in
 ├── tasks/                   # Portofolio tugas akademis & dokumen pendukung
 │   ├── laporan-scraping-olx-hp.pdf      # Laporan teknis praktikum awal akuisisi data OLX
 │   ├── scraping-olx-hp.csv              # Sampel data mentah hasil uji coba web scraping OLX
-│   ├── EAS BIGDA_2.pptx                 # File presentasi/PPT hasil akhir proyek Kelompok SIP
+│   ├── EAS BIGDA.pptx                 # File presentasi/PPT hasil akhir proyek Kelompok SIP
 │   └── individu/                        # Esai analisis Big Data sektoral (Tugas Individu)
-│       ├── 24083010032 Eris Alfionita Analisis Ekosistem Big Data pada E-Wallet Pemanfaatan Data Transaksi untuk Meningkatkan Kesehatan Fin.pdf
-│       ├── 24083010048 Alfani Nur Azizah Analisis Interoperabilitas dan Aksesibilitas Big Data Kesehatan pada Platform SATUSEHAT Kemenkes R.pdf
-│       ├── 24083010077 Gendis Poerbodani Analisis Big Data Berbasis Sistem AIS Untuk Mengatur Antrean Kapal di Pelabuhan.pdf
-│       └── 24083010120 Khairunisa Olive Ektha Analisis Big Data pada Platform Strava Peluang dan Tantangan dalam Mendukung Kota Cerdas Berb.pdf
+│       ├── 24083010032 Eris Alfionita ... .pdf
+│       ├── 24083010048 Alfani Nur Azizah ... .pdf
+│       ├── 24083010077 Gendis Poerbodani ... .pdf
+│       └── 24083010120 Khairunisa Olive Ektha ... .pdf
 └── README.md                # Dokumentasi utama keseluruhan proyek
 ```
 
@@ -94,7 +94,7 @@ Folder ini berfungsi sebagai **arsip akademis komprehensif** di luar pengerjaan 
 
 - **`laporan-scraping-olx-hp.pdf`** dan **`scraping-olx-hp.csv`** → basis dokumentasi taktis saat kelompok pertama kali menguji alur data pipeline
 - **`individu/`** → sub-folder yang memuat esai analitis dari masing-masing anggota kelompok mengenai implementasi arsitektur Big Data di berbagai sektor riil
-- **`EAS BIGDA_2.pptx`** → dokumen presentasi final yang merangkum seluruh hasil temuan proyek pasar teknologi ini
+- **`EAS BIGDA.pptx`** → dokumen presentasi final yang merangkum seluruh hasil temuan proyek pasar teknologi ini
 
 ## ⚙️ Cara Menjalankan Proyek Lokal
 
@@ -116,7 +116,7 @@ pip install pandas numpy rapidfuzz matplotlib seaborn jupyter
 ### 4. Jalankan Notebook
 Buka **Jupyter Notebook** atau **VS Code**, lalu eksekusi file di folder `notebooks/` secara berurutan dari nomor **01** hingga **04**:
 
-- `01_data_acquisition.ipynb`
+- `01_data_integration.ipynb`
 - `02_data_cleaning.ipynb`
 - `03_handphone_market_analysis.ipynb`
 - `04_laptop_market_analysis.ipynb`
