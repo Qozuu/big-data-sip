@@ -51,16 +51,75 @@ Menganalisis resale value dan likuiditas pasar bekas per brand
 | Shopee    | Smartphone (HP) dan laptop | Baru & Bekas | Simplescraper |
 | BliBli    | Smartphone (HP) dan laptop | Baru         | Web Scraping  |
 
-Detail Data:
+Detail Data Setelah Tahap Cleaning:
 
-- Total data: **34.646** baris
-- Distribusi per platform: Tokopedia (11.636) · Shopee (11.634) · Blibli (11.384)
-- Kolom utama: nama_produk, harga, jumlah terjual, rating, brand, kategori, kondisi, lokasi_penjual, platform
+- **Total Data Bersih:** **35.450** baris
+- **Distribusi per Platform:** Blibli (12.110) · Tokopedia (11.635) · Shopee (11.627)
 
 **Brand Coverage**
 
 - Smartphone (20 brand): Samsung, Apple, Poco, Xiaomi, Infinix, Realme, Vivo, Nokia, Tecno, Oppo, Itel, ZTE, Sony, Lenovo, HP, Advan, Huawei, Asus, Blackshark, Honor
 - Laptop (17 brand): Asus, Acer, Lenovo, Apple, HP, Dell, MSI, Axioo, Advan, Zyrex, Samsung, Huawei, Infinix, Realme, Xiaomi, Microsoft, Tecno
+
+---
+
+## 📂 Struktur Repositori
+
+Berikut adalah struktur pengorganisasian file dan dokumen di dalam repositori ini:
+
+```text
+├── data/
+│   ├── raw/                 # File dataset mentah hasil scraping skala besar
+│   └── processed/           # File hasil konsolidasi siap analisis (master_clean.csv)
+├── notebooks/
+│   ├── 01_data_acquisition.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_handphone_market_analysis.ipynb
+│   └── 04_laptop_market_analysis.ipynb
+├── tasks/                   # Portofolio tugas akademis & dokumen pendukung
+│   ├── laporan-scraping-olx-hp.pdf      # Laporan teknis praktikum awal akuisisi data OLX
+│   ├── scraping-olx-hp.csv              # Sampel data mentah hasil uji coba web scraping OLX
+│   ├── EAS BIGDA_2.pptx                 # File presentasi/PPT hasil akhir proyek Kelompok SIP
+│   └── individu/                        # Esai analisis Big Data sektoral (Tugas Individu)
+│       ├── 24083010032 Eris Alfionita Analisis Ekosistem Big Data pada E-Wallet Pemanfaatan Data Transaksi untuk Meningkatkan Kesehatan Fin.pdf
+│       ├── 24083010048 Alfani Nur Azizah Analisis Interoperabilitas dan Aksesibilitas Big Data Kesehatan pada Platform SATUSEHAT Kemenkes R.pdf
+│       ├── 24083010077 Gendis Poerbodani Analisis Big Data Berbasis Sistem AIS Untuk Mengatur Antrean Kapal di Pelabuhan.pdf
+│       └── 24083010120 Khairunisa Olive Ektha Analisis Big Data pada Platform Strava Peluang dan Tantangan dalam Mendukung Kota Cerdas Berb.pdf
+└── README.md                # Dokumentasi utama keseluruhan proyek
+```
+
+### 📌 Catatan Folder `tasks/`
+
+Folder ini berfungsi sebagai **arsip akademis komprehensif** di luar pengerjaan inti kode proyek. Isinya mencakup:
+
+- **`laporan-scraping-olx-hp.pdf`** dan **`scraping-olx-hp.csv`** → basis dokumentasi taktis saat kelompok pertama kali menguji alur data pipeline
+- **`individu/`** → sub-folder yang memuat esai analitis dari masing-masing anggota kelompok mengenai implementasi arsitektur Big Data di berbagai sektor riil
+- **`EAS BIGDA_2.pptx`** → dokumen presentasi final yang merangkum seluruh hasil temuan proyek pasar teknologi ini
+
+## ⚙️ Cara Menjalankan Proyek Lokal
+
+### 1. Clone Repositori ini
+```bash
+git clone https://github.com/Qozuu/big-data-sip.git
+```
+
+### 2. Masuk ke Direktori Proyek
+```bash
+cd big-data-sip
+```
+
+### 3. Instalasi Library Pendukung
+```bash
+pip install pandas numpy rapidfuzz matplotlib seaborn jupyter
+```
+
+### 4. Jalankan Notebook
+Buka **Jupyter Notebook** atau **VS Code**, lalu eksekusi file di folder `notebooks/` secara berurutan dari nomor **01** hingga **04**:
+
+- `01_data_acquisition.ipynb`
+- `02_data_cleaning.ipynb`
+- `03_handphone_market_analysis.ipynb`
+- `04_laptop_market_analysis.ipynb`
 
 ---
 
@@ -75,7 +134,7 @@ Detail Data:
 
 ## 🔎 8V yang Difokuskan
 
-- **Volume**: 97.166 baris data hasil scraping dari 3 platform, menjadi 34.646 setelah cleaning. Distribusi data antar platform relatif seimbang (~33% per platform) sehingga hasil analisis lebih representatif.
+- **Volume**: **97.166** baris data hasil scraping dari 3 platform, menyusut menjadi **35.450** baris setelah proses data cleaning intensif. Distribusi kuantitas data bersih didominasi oleh Blibli (34.24%), disusul secara berimbang oleh Tokopedia (32.89%) dan Shopee (32.87%).
 - **Variety**: Data numerik (harga, jumlah terjual, rating), kategorikal (brand, kategori, kondisi, platform), dan teks (nama produk, lokasi penjual).
 - **Velocity**: Secara konseptual, sumber datanya memiliki velocity tinggi karena harga, stok, dan jumlah terjual berubah cepat akibat promo dan dinamika permintaan. Velocity juga tercermin dari seberapa laku suatu produk, diukur melalui `jumlah_terjual` dan estimasi revenue (`harga × jumlah_terjual`). Penambahan snapshot di waktu berbeda memungkinkan analisis perubahan harga dan penjualan dari waktu ke waktu.
 - **Veracity**: Data mengandung sejumlah noise dan inkonsistensi seperti typo nama brand dan platform, format harga tidak seragam, nilai rating di luar rentang valid, serta produk yang salah kategori. Proses cleaning dilakukan untuk meningkatkan kepercayaan data sebelum dianalisis.
@@ -110,7 +169,7 @@ Data mentah hasil scraping belum seragam dan tidak langsung siap dianalisis. Tah
 **Analisis Gabungan**
 
 - *Sebaran Data per Platform*
-  Distribusi jumlah listing dan persentase produk di setiap platform. Shopee dan Tokopedia mendominasi volume transaksi (duopoli pasar), sementara Blibli tertinggal jauh dalam kuantitas namun rating kepuasan konsumen merata di semua platform.
+  Distribusi sebaran jumlah listing di ketiga platform bersaing ketat secara seimbang. **Blibli menjadi platform dengan kontribusi kuantitas listing terbesar (34.24%)**, diikuti secara ketat oleh Tokopedia (32.89%) dan Shopee (32.87%). Keseimbangan volume ini menjamin hasil analisis bebas dari bias dominasi salah satu platform e-commerce.
 - *Komparasi Performa Kategori (HP vs Laptop)*
   HP unggul di volume penjualan (2,47 juta unit vs 1,17 juta unit), namun Laptop menghasilkan estimasi omset lebih besar (~Rp 9,99 T vs ~Rp 9,53 T) berkat rata-rata harga yang hampir 2× lebih tinggi (Rp 8,49 juta vs Rp 3,86 juta).
 
