@@ -58,8 +58,8 @@ Detail Data Setelah Tahap Cleaning:
 
 **Brand Coverage**
 
-- Smartphone (20 brand): Samsung, Apple, Poco, Xiaomi, Infinix, Realme, Vivo, Nokia, Tecno, Oppo, Itel, ZTE, Sony, Lenovo, HP, Advan, Huawei, Asus, Blackshark, Honor
-- Laptop (17 brand): Asus, Acer, Lenovo, Apple, HP, Dell, MSI, Axioo, Advan, Zyrex, Samsung, Huawei, Infinix, Realme, Xiaomi, Microsoft, Tecno
+- **Smartphone (20 brand):** Advan, Apple, Asus, Blackshark, Honor, HP, Huawei, Infinix, Itel, Lenovo, Nokia, Oppo, Poco, Realme, Samsung, Sony, Tecno, Vivo, Xiaomi, ZTE
+- **Laptop (20 brand):** Acer, Advan, Apple, Asus, Axioo, Dell, Honor, HP, Huawei, Infinix, Itel, Lenovo, Microsoft, MSI, Realme, Samsung, Sony, Tecno, Xiaomi, Zyrex
 
 ---
 
