@@ -10,7 +10,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Ongoing-orange?style=for-the-badge" alt="Status Ongoing">
+  <img src="https://img.shields.io/badge/Status-Ongoing-orange?style=for-the-badge" alt="Status Completed">
   <img src="https://img.shields.io/badge/Focus-Big%20Data-blue?style=for-the-badge" alt="Focus Big Data">
   <img src="https://img.shields.io/badge/Tools-Python%20%7C%20Pandas%20%7C%20Web%20Scraper-green?style=for-the-badge" alt="Tools">
 </p>
@@ -21,12 +21,12 @@
 
 Kami adalah kolaborasi mahasiswa yang berdedikasi mentransformasi data mentah e-commerce menjadi wawasan strategis di pasar digital.
 
-| Nama Lengkap                | NPM           |
-|----------------------------|--------------|
-| *Eris Alfionita*         | 24083010032| 
-| *Gendis Poerbodani*      | 24083010077|
-| *Alfani Nur Azizah*      | 24083010048| 
-| *Khairunisa Olive Ektha* | 24083010120|
+| Nama Lengkap               | NPM         |
+| -------------------------- | ----------- |
+| *Eris Alfionita*         | 24083010032 |
+| *Gendis Poerbodani*      | 24083010077 |
+| *Alfani Nur Azizah*      | 24083010048 |
+| *Khairunisa Olive Ektha* | 24083010120 |
 
 ---
 
@@ -45,11 +45,11 @@ Menganalisis resale value dan likuiditas pasar bekas per brand
 
 **Sumber Data**
 
-| Sumber | Jenis Produk | Kondisi | Metode |
-|--------|-------------|---------|--------|
-| Tokopedia | Smartphone (HP) dan laptop| Baru & Bekas | Web Scraping |
-| Shopee | Smartphone (HP) dan laptop| Baru & Bekas | Simplescraper |
-| BliBli | Smartphone (HP) dan laptop| Baru | Web Scraping |
+| Sumber    | Jenis Produk               | Kondisi      | Metode        |
+| --------- | -------------------------- | ------------ | ------------- |
+| Tokopedia | Smartphone (HP) dan laptop | Baru & Bekas | Web Scraping  |
+| Shopee    | Smartphone (HP) dan laptop | Baru & Bekas | Simplescraper |
+| BliBli    | Smartphone (HP) dan laptop | Baru         | Web Scraping  |
 
 Detail Data:
 
@@ -67,9 +67,10 @@ Detail Data:
 ## ⚙️ Metode Akuisisi Data
 
 **Tools yang digunakan:**
+
 - [WebScraper.io](https://webscraper.io/) — ekstensi browser untuk scraping halaman dinamis tanpa kode pada platform Tokopedia dan BliBli
 - [Simplescraper](https://simplescraper.io/) - ekstensi browser untuk scraping pada platform Shopee
-  
+
 ---
 
 ## 🔎 8V yang Difokuskan
@@ -84,17 +85,18 @@ Detail Data:
 - **Visualization**: Hasil analisis divisualisasikan dalam dashboard ringkas mencakup KPI cards (total produk, top brand, jumlah anomali), treemap dominasi brand, histogram distribusi harga, boxplot median harga per brand, heatmap harga per brand × platform, dan bar chart anomali per brand.
 
 ---
+
 ## 🛠️ 3. Data Wrangling (Preprocessing)
 
 Data mentah hasil scraping belum seragam dan tidak langsung siap dianalisis. Tahapan utama yang dilakukan:
 
-- *Penambahan konteks*: Menambahkan kolom category, brand, dan condition (baru/bekas) berdasarkan setting scraping atau nama file.  
+- *Penambahan konteks*: Menambahkan kolom category, brand, dan condition (baru/bekas) berdasarkan setting scraping atau nama file.
 - *Imputasi*: Mengisi nilai kosong pada rating, review_count, dan sold dengan 0 sebagai nilai default aman.
 - *Menghapus baris tidak releva*: Drop placeholder "Akan Hadir", baris pre-order kosong, dan baris tanpa nama_produk atau harga.
 - *Menghapus duplikat dan menangani missing values* - kondisi kosong diisi "Baru", lokasi_penjual kosong diisi "Tidak Diketahui"
-- *Normalisasi price*: Menghapus "Rp", titik ribuan, dan spasi, lalu mengonversi ke tipe numerik (integer).  
+- *Normalisasi price*: Menghapus "Rp", titik ribuan, dan spasi, lalu mengonversi ke tipe numerik (integer).
 - *Normalisasi sold*:
-  - Membuat versi teks yang seragam (sold_text).  
+  - Membuat versi teks yang seragam (sold_text).
   - Membuat versi numerik sold_num (misalnya "3 rb+" → 3000, "30+" → 30).
 - *Fix typo & inkonsistensi kategorikal*: "Iphone" → "Apple", sub-brand alias (Nubia, Redmagic → ZTE), "Bliblii" → "Blibli".
 - *Standarisasi tipe data & format*: Normalisasi harga (strip "Rp", filter < Rp100.000), rating (konversi ke numerik, nilai di luar 1–5 → NaN), jumlah terjual (parse format "10rb+" → integer), serta teks kategorikal menggunakan .strip().str.title().
@@ -106,13 +108,14 @@ Data mentah hasil scraping belum seragam dan tidak langsung siap dianalisis. Tah
 ## 📊 Analisis
 
 **Analisis Gabungan**
-- *Sebaran Data per Platform*
-Distribusi jumlah listing dan persentase produk di setiap platform. Shopee dan Tokopedia mendominasi volume transaksi (duopoli pasar), sementara Blibli tertinggal jauh dalam kuantitas namun rating kepuasan konsumen merata di semua platform.
 
+- *Sebaran Data per Platform*
+  Distribusi jumlah listing dan persentase produk di setiap platform. Shopee dan Tokopedia mendominasi volume transaksi (duopoli pasar), sementara Blibli tertinggal jauh dalam kuantitas namun rating kepuasan konsumen merata di semua platform.
 - *Komparasi Performa Kategori (HP vs Laptop)*
-HP unggul di volume penjualan (2,47 juta unit vs 1,17 juta unit), namun Laptop menghasilkan estimasi omset lebih besar (~Rp 9,99 T vs ~Rp 9,53 T) berkat rata-rata harga yang hampir 2× lebih tinggi (Rp 8,49 juta vs Rp 3,86 juta).
+  HP unggul di volume penjualan (2,47 juta unit vs 1,17 juta unit), namun Laptop menghasilkan estimasi omset lebih besar (~Rp 9,99 T vs ~Rp 9,53 T) berkat rata-rata harga yang hampir 2× lebih tinggi (Rp 8,49 juta vs Rp 3,86 juta).
 
 **Analisis Kategori Handphone**
+
 1. **Brand Dominance** — Samsung, Apple, Poco menguasai 46% total unit terjual. Poco paling efisien (listing 5,47% tapi terjual 14,17%). Oppo oversupply: listing terbesar kedua tapi terjual hanya 2,55%.
 2. **Price Anomaly Detection** — 1.263 dari 19.557 listing (6,46%) terdeteksi anomali, mayoritas overpriced (1.230). Kasus ekstrem: listing dipasang Rp 90–110 juta jauh di atas batas wajar brand.
 3. **Depresiasi & Likuiditas Pasar Bekas** — Samsung terbaik: depresiasi 43,71% dengan likuiditas tertinggi (93,12%). Apple depresiasi tertinggi (59,76%) tapi volume bekas terbesar. Poco & Tecno depresiasi negatif (harga bekas ≥ baru).
@@ -122,6 +125,7 @@ HP unggul di volume penjualan (2,47 juta unit vs 1,17 juta unit), namun Laptop m
 7. **Hidden Gems** — iPhone bekas generasi lama (X, XR, 11 Pro Max) dan Poco C71 baru menjadi produk dengan value terbaik.
 
 **Analisis Kategori Laptop**
+
 1. **Brand Dominance** — Lenovo raja pasar dengan 30,84% total unit terjual meski bukan listing terbanyak. Apple dan MSI segmen premium (harga >Rp 13 juta) dengan market share rendah.
 2. **Price Anomaly Detection** — Top overpriced didominasi laptop ultra-flagship (MSI Titan RTX5090, Dell Pro Max) yang memang merupakan segmen premium, bukan kesalahan input.
 3. **Depresiasi & Likuiditas Pasar Bekas** — Asus dan Acer depresiasi tertinggi (73,99% dan 71,78%). Tecno anomali: depresiasi negatif (-21,09%), harga bekas lebih tinggi dari baru. Lenovo likuiditas tertinggi (91,80%).
@@ -131,6 +135,7 @@ HP unggul di volume penjualan (2,47 juta unit vs 1,17 juta unit), namun Laptop m
 ## 🚀 Bagaimana Tambahan Data Baru Meningkatkan Keampuhan Model Analisis
 
 Penambahan data baru (lebih banyak platform, lebih banyak snapshot waktu) meningkatkan keandalan model dengan:
+
 - Memperkaya distribusi data dan mengurangi bias satu platform
 - Memungkinkan perbandingan lintas platform secara lebih adil
 - Mengidentifikasi dominasi brand dengan lebih akurat
