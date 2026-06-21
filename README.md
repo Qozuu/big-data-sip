@@ -12,7 +12,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Completed-orange?style=for-the-badge" alt="Status Completed">
   <img src="https://img.shields.io/badge/Focus-Big%20Data-blue?style=for-the-badge" alt="Focus Big Data">
-  <img src="https://img.shields.io/badge/Tools-Python%20%7C%20Pandas%20%7C%20Web%20Scraper-green?style=for-the-badge" alt="Tools">
+  <img src="https://img.shields.io/badge/Tools-Python%20%7C%20Simplescraper%20%7C%20Web%20Scraper-green?style=for-the-badge" alt="Tools">
 </p>
 
 ---
